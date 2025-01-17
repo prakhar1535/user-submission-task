@@ -20,7 +20,9 @@ mongoose.connect(
     useUnifiedTopology: true,
   }
 );
-
+mongoose.connection.on("connected", () => {
+  console.log("Connected to MongoDB");
+});
 app.get("/", (req, res) => {
   res.send("Server is running successfully!");
 });
