@@ -20,7 +20,7 @@ const AdminDashboard = () => {
     useEffect(() => {
         const fetchSubmissions = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/submissions');
+                const response = await axios.get('https://user-submission-task-3.onrender.com/api/submissions');
                 setSubmissions(response.data);
                 setLoading(false);
             } catch (error) {
@@ -86,7 +86,7 @@ const AdminDashboard = () => {
                                             {submission.images.map((image, index) => (
                                                 <ImageListItem key={index}>
                                                     <img
-                                                        src={`http://localhost:5000/${image}`}
+                                                        src={`https://user-submission-task-3.onrender.com/${image}`}
                                                         alt={`Upload ${index + 1} by ${submission.name}`}
                                                         loading="lazy"
                                                         style={{ objectFit: 'cover' }}
